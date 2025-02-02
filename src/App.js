@@ -1,22 +1,21 @@
-import "./App.css";
-import Article from "./pages/Article";
-import Header from "./pages/Header";
+import './App.css';
+import Article from './pages/Article';
+import Header from './pages/Header';
+import OneRoom from './pages/OneRoom';
+import KakaoMap from './KakaoMap';
 
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+
+import { Routes, Route, Link, NavLink } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      {/* 로고와 Nav바 시작 */}
-      <Header />
-      {/* 로고와 Nav바 끝 */}
-      <Article />
+    <div className='App'>
       {/* 라우터 정리 시작 */}
       <Routes>
-        {/* <Route path="/" element={<Header></Header>} />
-        <Route path="매매·전월세" element={<Article />} />
-        <Route path="/" element={<Header />} />
-        <Route path="/" element={<Header />} /> */}
+        <Route path='/' element={<Header />} />
+        <Route path='매매·전월세' element={<OneRoom></OneRoom>} />
+        <Route path='원룸·전월세' element={<OneRoom />} />
+        <Route path='오피스텔·전월세' element={<OneRoom />} />
       </Routes>
       {/* 라우터 정리 끝 */}
     </div>

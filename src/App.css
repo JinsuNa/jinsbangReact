@@ -1,4 +1,140 @@
 .logoImg {
-  width: 100%;
+  width: 100px;
   height: 100%;
+  text-align: center;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-container {
+  display: flex;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: opacity 0.3s ease; /* 부드럽게 사라지는 효과 */
+}
+
+/* ✅ 로그인/회원가입 버튼 */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.5s ease-in-out; /* 부드럽게 흐려지는 효과 */
+}
+
+.auth-button {
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.auth-button:hover {
+  background-color: #f0f0f0;
+}
+
+
+.article-container {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* 화면 전체 높이 */
+  background-image: url("./pages/Article/img/bg_img1.png"); /* 배경 이미지 */
+  background-size: cover; /* 이미지 크기 맞추기 */
+  background-position: center; /* 이미지 가운데 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.search_bar {
+  width: 300px;
+  height: 50px;
+  border: none;
+  border-radius: 25px; /* 둥근 테두리 */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #333;
+  background: rgba(255, 255, 255, 0.8); /* 반투명 */
+  backdrop-filter: blur(5px); /* 유리 효과 */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 부드러운 그림자 */
+  transition: all 0.3s ease-in-out;
+  opacity: 70%;
+}
+
+/* placeholder 스타일 조정 */
+.search_bar::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+
+/* 포커스 시 효과 */
+.search_bar:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 1);
+  border: 2px solid #007bff; /* 강조 색상 */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+.search input{
+  text-align: center;
+}
+
+.description{
+  opacity: 50%;
+}
+
+/* 🎯 970px 이하에서 글자가 흐려지기 시작 */
+@media screen and (max-width: 1100px) {
+  .nav-buttons {
+    opacity: 0.7;
+  }
+  .auth-buttons {
+    opacity: 0.7;
+  }
+}
+
+/* 🎯 920px 이하에서 더 흐려짐 */
+@media screen and (max-width: 1080px) {
+  .nav-buttons {
+    opacity: 0.5;
+  }
+  .auth-buttons {
+    opacity: 0.5;
+  }
+}
+
+/* 🎯 880px 이하에서 거의 안 보이게 */
+@media screen and (max-width: 1070px) {
+  .nav-buttons {
+    opacity: 0.2;
+  }
+  .auth-buttons {
+    opacity: 0.2;
+  }
+}
+
+/* 🎯 850px 이하에서 완전히 사라짐 */
+@media screen and (max-width: 1065px) {
+  .nav-buttons {
+    display: none;
+  }
+  .auth-buttons {
+    display: none;
+  }
 }
