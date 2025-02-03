@@ -1,13 +1,9 @@
+/* ✅ Sidebar와 main content 영역을 나누기 */
 .sidebar {
-    width: 200px;
-    height: 100vh;  /* 전체 높이 */
-    /* position: fixed; 화면에 고정 */
-    top: 0;
-    left: 0;
-    background-color: #f8f9fa; /* 부트스트랩 기본 배경색 */
-    padding: 10px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  }
+  width: 150px; /* 사이드바 고정 크기 */
+  background: #f8f8f8;
+  height: 100vh;
+}
   
   .sidebar-item {
     font-size: 18px;

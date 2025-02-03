@@ -1,10 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { Routes, Route, Link, NavLink, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import {
   getAuth,
   signInWithPopup,
@@ -13,9 +7,8 @@ import {
 } from "firebase/auth"; //구글 로그인을 하기위한 임포트
 import { onAuthStateChanged } from "firebase/auth"; //구글 로그인 상태 여부 파악하는 기능
 import { useEffect, useState } from "react";
-import Login from "../Login";
 
-function DetailNav() {
+function Login() {
   const navigate = useNavigate();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
@@ -54,13 +47,20 @@ function DetailNav() {
       });
   }
   return (
-    <div className="nav-buttons">
-      <Link to={"/아파트_관심목록"}>지도</Link>
-      <Link to={"/아파트_관심목록"}>분양</Link>
-      <Link to={"/아파트_관심목록"}>관심목록</Link>
-      <Link to={"/아파트_관심목록"}>방 내놓기</Link>
-      <Login />
+    <div className="auth-buttons">
+      {userInfo !== null ? (
+        <p className="userName">{userInfo.displayName}님 환영합니다.</p>
+      ) : null}
+      {userInfo === null ? (
+        <a href="#" className="auth-button" onClick={firebaseLogin}>
+          로그인
+        </a>
+      ) : (
+        <a href="#" className="auth-button" onClick={firebaseLogout}>
+          로그아웃
+        </a>
+      )}
     </div>
   );
 }
-export default DetailNav;
+export default Login;
